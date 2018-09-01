@@ -1,31 +1,5 @@
-class Node {
-    constructor(val, next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    setValue(val) {
-        this.val = val === undefined ? this.val : val;
-    }
-
-    getValue() {
-        return this.val;
-    }
-
-    setNext(next) {
-        this.next = next === undefined ? this.next : next;
-    }
-
-    getNext() {
-        return this.next;
-    }
-
-    toString() {
-        return `[${this.val}]`;
-    }
-}
-
-class LinkedList {
+const Node = require('./Node.js');
+module.exports = class LinkedList {
     constructor(val=0) {
         this.head = new Node(val, null);
         this.tail = this.head;
@@ -77,14 +51,3 @@ class LinkedList {
         return result.join('-');
     }
 }
-
-var linkArray = new LinkedList();
-linkArray.add(1);
-linkArray.add(2);
-linkArray.add(3);
-console.log(linkArray.toString());
-linkArray.delete(2);
-console.log(linkArray.toString());
-linkArray.add(4);
-console.log(linkArray.toString());
-
